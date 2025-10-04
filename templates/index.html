@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dahej Calculator 💍</title>
+    <style>
+        body { font-family: Arial; padding: 20px; background-color: #fdf6e3; }
+        h1 { color: #b58900; }
+        label { display: block; margin-top: 10px; }
+        input { margin-bottom: 10px; width: 300px; padding: 5px; }
+        button { padding: 10px 20px; background-color: #268bd2; color: white; border: none; cursor: pointer; }
+        .result { margin-top: 20px; background-color: #eee; padding: 15px; border-radius: 5px; }
+    </style>
+</head>
+<body>
+    <h1>Welcome to the Dahej Calculator 🥳</h1>
+    <form method="POST">
+        <label>Girl's Beauty (1-10):</label><input type="number" name="beauty" required>
+        <label>Girl's Income (₹):</label><input type="number" name="girl_income" required>
+        <label>Girl's Property (₹):</label><input type="number" name="girl_property" required>
+        <label>Man's Income (₹):</label><input type="number" name="man_income" required>
+        <label>Man's Property (₹):</label><input type="number" name="man_property" required>
+        <label>Education Factor (0-5):</label><input type="number" name="education_factor" required>
+        <label>Drama Index (0-5):</label><input type="number" name="drama_index" required>
+        <button type="submit">Calculate Dahej</button>
+    </form>
+
+    {% if dahej_value %}
+    <div class="result">
+        <h2>💰 Dahej Value: ₹{{ dahej_value }}</h2>
+        <p>👉 {{ funny_comment }}</p>
+    </div>
+    {% endif %}
+</body>
+</html>
