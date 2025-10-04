@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dahej Calculator 💍</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #fdf6e3;
+            max-width: 600px;
+            margin: auto;
+        }
+        h1 {
+            color: #b58900;
+            text-align: center;
+        }
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+        input {
+            margin-top: 5px;
+            margin-bottom: 10px;
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #268bd2;
+            color: white;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #1c6ca1;
+        }
+        .result {
+            margin-top: 30px;
+            background-color: #eee;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to the Dahej Calculator 🥳</h1>
+    <form method="POST">
+        <label for="beauty">Girl's Beauty (1–10):</label>
+        <input type="number" name="beauty" id="beauty" min="1" max="10" required>
+
+        <label for="girl_income">Girl's Income (₹):</label>
+        <input type="number" name="girl_income" id="girl_income" min="0" required>
+
+        <label for="girl_property">Girl's Property (₹):</label>
+        <input type="number" name="girl_property" id="girl_property" min="0" required>
+
+        <label for="man_income">Man's Income (₹):</label>
+        <input type="number" name="man_income" id="man_income" min="0" required>
+
+        <label for="man_property">Man's Property (₹):</label>
+        <input type="number" name="man_property" id="man_property" min="0" required>
+
+        <label for="education_factor">Education Factor (0–5):</label>
+        <input type="number" name="education_factor" id="education_factor" min="0" max="5" required>
+
+        <label for="drama_index">Drama Index (0–5):</label>
+        <input type="number" name="drama_index" id="drama_index" min="0" max="5" required>
+
+        <button type="submit">Calculate Dahej</button>
+    </form>
+
+    {% if dahej_value is defined %}
+    <div class="result">
+        <h2>💰 Dahej Value: ₹{{ dahej_value }}</h2>
+        <p>👉 {{ funny_comment }}</p>
+    </div>
+    {% endif %}
+</body>
+</html>
+
